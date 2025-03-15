@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Block Time & TPS Comparison</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .frame {
+            border: 5px solid black;
+            padding: 20px;
+            display: inline-block;
+            background-color: white;
+            position: relative;
+            width: 650px;
+            height: auto;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+        }
+        .row {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin: 5px 0;
+            position: relative;
+        }
+        .label-container {
+            display: flex;
+            align-items: center;
+        }
+        .label {
+            min-width: 150px;
+            text-align: left;
+            background-color: rgb(68, 68, 68);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+        .icon {
+            width: 24px;
+            height: 24px;
+        }
+        .dot {
+            border-radius: 50%;
+            position: absolute;
+            left: 210px;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        @keyframes move {
+            from { left: 210px; }
+            to { left: 600px; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Blockchain Block Time & TPS Comparison</h1>
+    <div class="frame">
+        <div class="container">
+            <div class="row">
+                <div class="label-container">
+                    <img class="icon" src="solana.png" alt="Solana">
+                    <span class="label">Solana (0.4s, 65k)</span>
+                </div>
+                <div class="dot" style="background-color: #007acc; width: 65px; height: 65px; animation: move 0.4s infinite alternate;"></div>
+            </div>
+            <div class="row">
+                <div class="label-container">
+                    <img class="icon" src="icp.png" alt="ICP">
+                    <span class="label">ICP (0.2s, 11.5k)</span>
+                </div>
+                <div class="dot" style="background-color: #ff6600; width: 30px; height: 30px; animation: move 0.2s infinite alternate;"></div>
+            </div>
+            <div class="row">
+                <div class="label-container">
+                    <img class="icon" src="polygon.png" alt="Polygon">
+                    <span class="label">Polygon PoS (2s, 7k)</span>
+                </div>
+                <div class="dot" style="background-color: #8247e5; width: 25px; height: 25px; animation: move 2s infinite alternate;"></div>
+            </div>
+            <div class="row">
+                <div class="label-container">
+                    <img class="icon" src="avalanche.png" alt="Avalanche">
+                    <span class="label">Avalanche (2s, 4.5k)</span>
+                </div>
+                <div class="dot" style="background-color: #e84142; width: 22px; height: 22px; animation: move 2s infinite alternate;"></div>
+            </div>
+            <div class="row">
+                <div class="label-container">
+                    <img class="icon" src="optimism.png" alt="Optimism">
+                    <span class="label">Optimism (2s, 2k)</span>
+                </div>
+                <div class="dot" style="background-color: #ff0420; width: 20px; height: 20px; animation: move 2s infinite alternate;"></div>
+            </div>
+            <div class="row">
+                <div class="label-container">
+                    <img class="icon" src="arbitrum.png" alt="Arbitrum">
+                    <span class="label">Arbitrum (2s, 2k)</span>
+                </div>
+                <div class="dot" style="background-color: #2d374b; width: 20px; height: 20px; animation: move 2s infinite alternate;"></div>
+            </div>
+            <div class="row">
+                <div class="label-container">
+                    <img class="icon" src="tron.png" alt="Tron">
+                    <span class="label">Tron (3s, 2k)</span>
+                </div>
+                <div class="dot" style="background-color: #ffcc00; width: 20px; height: 20px; animation: move 3s infinite alternate;"></div>
+            </div>
+            <div class="row">
+                <div class="label-container">
+                    <img class="icon" src="cardano.png" alt="Cardano">
+                    <span class="label">Cardano (20s, 250)</span>
+                </div>
+                <div class="dot" style="background-color: #0033ad; width: 15px; height: 15px; animation: move 20s infinite alternate;"></div>
+            </div>
+            <div class="row">
+                <div class="label-container">
+                    <img class="icon" src="ethereum.png" alt="Ethereum">
+                    <span class="label">Ethereum (12s, 15)</span>
+                </div>
+                <div class="dot" style="background-color: #6364ff; width: 10px; height: 10px; animation: move 12s infinite alternate;"></div>
+            </div>
+            <div class="row">
+                <div class="label-container">
+                    <img class="icon" src="bitcoin.png" alt="Bitcoin">
+                    <span class="label">Bitcoin (600s, 7)</span>
+                </div>
+                <div class="dot" style="background-color: #f7931a; width: 8px; height: 8px; animation: move 600s infinite alternate;"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
