@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Block Time & TPS Comparison</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .frame {
+            border: 5px solid black;
+            padding: 20px;
+            display: inline-block;
+            background-color: white;
+            position: relative;
+            width: 650px;
+            height: auto;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+        }
+        .row {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin: 5px 0;
+            position: relative;
+        }
+        .label-container {
+            display: flex;
+            align-items: center;
+        }
+        .label {
+            min-width: 150px;
+            text-align: left;
+            background-color: rgb(68, 68, 68);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+        .icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+        .dot {
+            border-radius: 50%;
+            position: absolute;
+            left: 220px;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        @keyframes move {
+            from { left: 220px; }
+            to { left: 600px; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Block Time & TPS Comparison</h1>
+    <div class="frame">
+        <div class="container">
+            
+            <script>
+                const chains = [
+                    { name: "Aptos", time: 0.15, tps: 160000, color: "#ff9900" },
+                    { name: "Arbitrum", time: 0.25, tps: 40000, color: "#2d374b" },
+                    { name: "Solana", time: 0.4, tps: 65000, color: "#007acc" },
+                    { name: "Sonic", time: 0.47, tps: 396825, color: "#ff3333" },
+                    { name: "ICP", time: 0.48, tps: 209708, color: "#ff6600" },
+                    { name: "opBNB", time: 1.0, tps: 4762, color: "#f0b90b" },
+                    { name: "Polygon", time: 2.0, tps: 7000, color: "#8247e5" },
+                    { name: "Avalanche", time: 2.0, tps: 4500, color: "#e84142" },
+                    { name: "Optimism", time: 2.0, tps: 2000, color: "#ff0420" },
+                    { name: "Tron", time: 3.0, tps: 2000, color: "#ffcc00" },
+                    { name: "Stellar", time: 5.8, tps: 1137, color: "#08b5e5" },
+                    { name: "Cardano", time: 20.0, tps: 250, color: "#0033ad" },
+                    { name: "Ethereum", time: 12.0, tps: 15, color: "#6364ff" },
+                    { name: "Bitcoin", time: 1287.0, tps: 7, color: "#f7931a" }
+                ];
+
+                // chains.forEach(chain => {
+                //     document.write(`
+                //         <div class="row">
+                //             <div class="label-container">
+                //                 <img class="icon" src="${chain.name.toLowerCase()}.png" alt="${chain.name}">
+                //                 <span class="label">${chain.name} (${chain.time}s, ${chain.tps})</span>
+                //             </div>
+                //             <div class="dot" style="background-color: ${chain.color}; width: ${Math.max(10, Math.min(70, chain.tps / 1000))}px; height: ${Math.max(10, Math.min(70, chain.tps / 1000))}px; animation: move ${chain.time}s infinite alternate;"></div>
+                //         </div>
+                //     `);
+                // });
+
+                function formatTPS(tps) {
+                    return tps >= 1000 ? (tps / 1000).toFixed(1).replace(/\.0$/, "") + "k" : tps;
+                }
+
+                chains.forEach(chain => {
+                    document.write(`
+                        <div class="row">
+                            <div class="label-container">
+                                <img class="icon" src="${chain.name.toLowerCase()}.png" alt="${chain.name}">
+                                <span class="label">${chain.name} (${chain.time}s, ${formatTPS(chain.tps)})</span>
+                            </div>
+                            <div class="dot" style="background-color: ${chain.color}; width: ${Math.max(10, Math.min(70, chain.tps / 1000))}px; height: ${Math.max(10, Math.min(70, chain.tps / 1000))}px; animation: move ${chain.time}s infinite alternate;"></div>
+                        </div>
+                    `);
+                });
+
+
+
+
+
+
+            </script>
+
+        </div>
+    </div>
+</body>
+</html>
